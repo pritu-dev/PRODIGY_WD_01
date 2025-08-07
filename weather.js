@@ -5,16 +5,12 @@ const temperature = document.querySelector('.temperature');
 const description = document.querySelector('.description');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
-
 const location_not_found = document.querySelector('.location-not-found');
-
 const weather_body = document.querySelector('.weather-body');
-
 
 async function checkWeather(city){
     const api_key = "ac54a6eaadce0523df06e2acf3476437";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
-
     const weather_data = await fetch(`${url}`).then(response => response.json());
 
 
@@ -56,10 +52,11 @@ async function checkWeather(city){
 
     }
 
-    console.log(weather_data);
+    // console.log(weather_data);
 }
 
 
 searchBtn.addEventListener('click', ()=>{
     checkWeather(inputBox.value);
+
 });
